@@ -58,6 +58,19 @@
 // ONLY UNCOMMENT THINGS IN ONE PRINTER SECTION!!! IF YOU HAVE MULTIPLE MACHINES FLASH THEM ONE AT A TIME.
 
 //===========================================================================
+// *************************     TH3D PRINTERS      *************************
+//===========================================================================
+
+//===========================================================================
+// TH3D Artillery EZ300 Options - Select Arduino Mega 2560 from Tools > Board
+//===========================================================================
+//#define AR_EZ300
+
+// EZABL Probe Mounts
+//#define AR_OEM_MOUNT
+//#define CUSTOM_PROBE
+
+//===========================================================================
 // *************************    ADIMLab PRINTERS    *************************
 //===========================================================================
 
@@ -225,6 +238,10 @@
 //===========================================================================
 //#define ENDER2
 
+// If you are using our EZOut V2 (connects to the LCD header & connect the 2 pin connector to the "Check" header to the right of the LCD connection) filament sensor kit please follow the install guide
+// and then uncomment the #define EZOUTV2_ENABLE line below. Do NOT ever connect our filament sensor without the supplied adapter board.
+//#define EZOUTV2_ENABLE
+
 // EZABL Probe Mounts (Ender 2 can use the same mounts as CR-10, Ender 2 Specific mounts minimize distance from probe to nozzle for max probing area)
 // If you have issues with the non-Ender 2 mounts then please print them off and switch to one of them before contacting support. 
 // This is because the probeable area on the non-Ender 2 mounts is too small typically to get a good result.
@@ -277,6 +294,25 @@
 
 // If you are using a dual hotend with dual nozzles uncomment the below line
 //#define DUAL_HOTEND_DUAL_NOZZLES
+
+//===========================================================================
+// Creality Ender 5 Options - Select 'Sanguino 1284p' from Tools > Board
+//===========================================================================
+//#define ENDER5
+
+// If you are using our EZOut V1/V2 (connected to LCD header) filament sensor kit please follow the install guide
+// and then uncomment the #define EZOUT_ENABLE line below.
+// Do NOT ever connect our filament sensor without the supplied adapter board.
+//#define EZOUT_ENABLE
+
+// EZABL Probe Mounts (Ender 5 uses the same mounts as CR-10)
+//#define CR10_OEM
+//#define CR10_VOLCANO
+//#define CR10_V6HEAVYDUTY
+//#define TM3DAERO
+//#define TM3DAERO_EXTENDED
+//#define PETSFANG  //This is the RIGHT mounted version - if using the left mount please use the CUSTOM_PROBE option.
+//#define CUSTOM_PROBE
 
 //===========================================================================
 // *************************  FOLGERTECH PRINTERS   *************************
@@ -354,6 +390,26 @@
 
 // Slow down the hotend fan and control box fans to reduce noise
 //#define TORNADO_QUIET
+
+//===========================================================================
+// *************************    TRONXY PRINTERS     *************************
+//===========================================================================
+
+//===========================================================================
+// TronXY X3S Options - Select 'Sanguino 1284p' from Tools > Board
+//===========================================================================
+//#define TRONXY_X3S
+
+// EZABL Probe Mounts
+//#define CUSTOM_PROBE
+
+//===========================================================================
+// TronXY X5S Options - Select 'Sanguino 1284p' from Tools > Board
+//===========================================================================
+//#define TRONXY_X5S
+
+// EZABL Probe Mounts
+//#define CUSTOM_PROBE
 
 //===========================================================================
 // *************************    WANHAO PRINTERS     *************************
@@ -471,6 +527,12 @@
 // TH3D EXTRAS
 //===========================================================================
 
+// TH3D RGB LED STRIP ------------------------------
+// If you are using the TH3D RGB strip connect to the Z+ endstop connection and uncomment the below line
+//#define TH3D_RGB_STRIP
+// If you cut the strip shorter please count the LEDs that are left, uncomment the line below, and change the number below to how many LEDs you have.
+#define TH3D_RGB_STRIP_LED_COUNT 20
+
 // EXTRUDER SETTINGS -------------------------------
 
 // If you want to change the Esteps for your printer you can uncomment the below line and set CUSTOM_ESTEPS_VALUE to what you want - USE WHOLE NUMBERS ONLY
@@ -505,12 +567,12 @@
 // If you are using an AC bed with a standalone controller (Keenovo) uncomment the below line to disable the heated bed in the firmware
 //#define AC_BED
 
-// If your bed pulsing from PID is causing your lights to dim (mainly with AC beds)or you want slightly quicker bed 
-// heat up times uncomment below to switch back to the old "bang-bang" method that cycles it on and off slower.
-//#define PIDBED_DISABLE
-
 // Stock bed max is 110C for this firmware. Enable this to allow temps up to 150C. Your bed must support this temp for it to achieve the higher temperatures.
 //#define BED_HIGHTEMP
+
+// If you want PID tuning on your bed you can enable the below line. But PID on a bed is not typically needed. 
+// This will be disabled when using manual mesh leveling with a 1284p board due to memory limitations.
+//#define PIDBED_ENABLE
 
 // MISC --------------------------------------------
 
@@ -593,6 +655,6 @@
 
 #include "Configuration_backend.h"
 
-#define UNIFIED_VERSION "TH3D U1.R2.5"
+#define UNIFIED_VERSION "TH3D U1.R2.8"
 
 #endif // CONFIGURATION_H

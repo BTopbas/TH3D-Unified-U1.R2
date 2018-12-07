@@ -26,6 +26,17 @@
 #define CONFIGURATION_ADV_H
 #define CONFIGURATION_ADV_H_VERSION 010109
 
+#if ENABLED(TH3D_RGB_STRIP)
+  #define LED_CONTROL_MENU
+  #define LED_COLOR_PRESETS                 // Enable the Preset Color menu option
+  #define LED_USER_PRESET_RED        130  // User defined RED value
+  #define LED_USER_PRESET_GREEN      203  // User defined GREEN value
+  #define LED_USER_PRESET_BLUE       225  // User defined BLUE value
+  #define LED_USER_PRESET_WHITE      0  // User defined WHITE value
+  #define LED_USER_PRESET_BRIGHTNESS 255  // User defined intensity
+  #define LED_USER_PRESET_STARTUP       // Have the printer display the user preset color on startup
+#endif
+
 #if DISABLED(PIDTEMPBED)
   #define BED_CHECK_INTERVAL 500
   #if ENABLED(BED_LIMIT_SWITCHING)
@@ -111,10 +122,14 @@
     #endif
   #endif
 #else
-  #if ENABLED(TIM_I3MINI)
+  #if ENABLED(I3MINI_FANCONTROL)
     #define E0_AUTO_FAN_PIN 12
     #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
     #define EXTRUDER_AUTO_FAN_SPEED   255  // == full speed
+  #elif ENABLED(AR_EZ300)
+    #define E0_AUTO_FAN_PIN 7
+    #define EXTRUDER_AUTO_FAN_TEMPERATURE 40
+    #define EXTRUDER_AUTO_FAN_SPEED   255
   #else  
     #define E0_AUTO_FAN_PIN -1
     #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
@@ -245,8 +260,8 @@
 
 #define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
-  #define BABYSTEP_INVERT_Z false    
-  #define BABYSTEP_MULTIPLICATOR 10  
+  #define BABYSTEP_INVERT_Z false
+  #define BABYSTEP_MULTIPLICATOR 10
   #if ENABLED(BABYSTEP_OFFSET)
     #define BABYSTEP_ZPROBE_OFFSET   
   #endif
