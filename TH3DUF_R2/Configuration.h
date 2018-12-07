@@ -143,7 +143,7 @@
 //===========================================================================
 // Creality CR-10 Options - Select 'Sanguino 1284P' from Tools > Board
 //===========================================================================
-//#define CR10
+#define CR10
 //#define CR10_MINI
 //#define CR10_S4
 //#define CR10_S5
@@ -156,7 +156,7 @@
 // EZABL Probe Mounts
 //#define CR10_OEM
 //#define CR10_VOLCANO
-//#define CR10_V6HEAVYDUTY
+#define CR10_V6HEAVYDUTY
 //#define CR10_FANG
 //#define TM3DAERO
 //#define TM3DAERO_EXTENDED
@@ -468,7 +468,7 @@
 
 // If you want more or less EZABL probe points change the number below (only used if EZABL enabled)
 // Default is 3 which gives you 3x3 grid for a total of 9 points. STICK WITH ODD NUMBERS
-#define EZABL_POINTS 3
+#define EZABL_POINTS 5
 
 // If you want to probe in on the bed more than 15mm change this below. 
 // Do not use 30mm for the Standard CR-10/s or the S4 as you will be on the bed screws.
@@ -484,7 +484,7 @@
 
 // If you want babystepping to modify the Z Offset uncomment the below line. Use M500 to save any changes made or
 // Control > Store Settings if you want to save the changes made with the Z Offset/Babystepping combined option.
-//#define BABYSTEP_OFFSET
+#define BABYSTEP_OFFSET
 
 // This will disable the XYE motors during probing. Can be useful if you have stepper motors causing interference issues with the EZABL sensor.
 //#define PROBING_MOTORS_OFF
@@ -540,8 +540,8 @@
 #define CUSTOM_ESTEPS_VALUE 999
 
 // If you are using an E3D or TH3D Titan Extruder uncomment the below line to setup the firmware to the correct steps and direction
-//#define TITAN_EXTRUDER
-#define TITAN_EXTRUDER_STEPS 463
+#define TITAN_EXTRUDER
+#define TITAN_EXTRUDER_STEPS 415
 
 // DUAL HOTEND SETTINGS ----------------------------
 
@@ -551,7 +551,7 @@
 // THERMISTOR SETTINGS -----------------------------
 
 // If you are using an E3D V6 Hotend uncomment the below line.
-//#define V6_HOTEND
+#define V6_HOTEND
 
 // If you are using a Tough Hotend from TH3D or any thermistors TH3D sells for your hotend uncomment the below line.
 //#define TH3D_HOTEND_THERMISTOR
@@ -577,10 +577,10 @@
 // MISC --------------------------------------------
 
 // If you have a 5015 fan that whines when under 100% speed uncomment the below line.
-//#define FAN_FIX
+#define FAN_FIX
 
 // Use your own printer name
-//#define USER_PRINTER_NAME "CHANGE ME" 
+//#define USER_PRINTER_NAME "Art Fun SEX" 
 
 // If your printer is homing to the endstops hard uncomment this to change the homing speed/divisor to make it less aggressive.
 //#define SLOWER_HOMING
@@ -636,6 +636,9 @@
 //#define NEW_JERK_CONTROL
 //#define NEW_ACCELERATION_CONTROL
 
+//BLTOUCH 
+#define BLTOUCH
+#define SERVO0_PIN 27 
 //================================================================================================
 // Language - This is provided for convenience and is unsupported with included product support.
 // We only test compile with English language. If you run into space issues disable some features.
